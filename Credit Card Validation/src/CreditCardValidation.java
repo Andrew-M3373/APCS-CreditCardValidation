@@ -59,6 +59,7 @@ public class CreditCardValidation {
 	
 	public static void generate100() throws IOException {
 		int[] number = new int[16];
+		int counter = 0;
 		File f = new File("generated");
 		FileWriter fw = new FileWriter(f, true);
 		BufferedWriter bw = new BufferedWriter(fw);
@@ -68,6 +69,7 @@ public class CreditCardValidation {
 				int random = (int) (Math.random() * 10);
 				number[j] = random;
 			}
+			counter ++;
 			for (int j = 0; j < 16; j++) {
 				if (j % 2 == 0) {
 					number[j] = number[j]*2;
@@ -92,6 +94,7 @@ public class CreditCardValidation {
 		bw.close();
 		fw.close();
 		System.out.println("\n100 potentially valid credit card numbers have been appended to the \"generated\" text file.");
+		System.out.println("The system took " + counter + " tries to generate 100 valid numbers.");
 	}
 
 	public static void validateInput(Scanner ui) {
