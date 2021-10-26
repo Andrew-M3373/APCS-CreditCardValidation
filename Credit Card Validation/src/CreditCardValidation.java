@@ -27,6 +27,7 @@ public class CreditCardValidation {
 		else if (input == 1) {
 			generate100();
 		}
+		// comment
 	}
 	
 	public static void validateCardsInFile(Scanner f) {
